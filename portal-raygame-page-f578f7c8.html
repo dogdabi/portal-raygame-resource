@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷竞技 · 站点介绍与知识参考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f4f6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1d2b3a;
+            line-height: 1.6;
+            padding: 2.5rem 1.25rem;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 标题群 */
+        .site-header {
+            margin-bottom: 2rem;
+        }
+
+        .site-header h1 {
+            font-size: 2.1rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #1e2c3a;
+            border-left: 5px solid #4c7a9c;
+            padding-left: 1rem;
+        }
+
+        .site-header .sub {
+            margin-top: 0.4rem;
+            font-size: 1rem;
+            color: #5a6a7a;
+            padding-left: 1.5rem;
+        }
+
+        /* 卡片通用设计 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #dce2e9;
+            border-radius: 14px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            padding: 1.75rem 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1e3a4f;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 1.2rem;
+            background: #6b8da8;
+            border-radius: 2px;
+        }
+
+        .card p, .card li {
+            color: #2c3e50;
+            font-size: 0.98rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.5rem 0 0;
+        }
+
+        .card ul li {
+            padding: 0.35rem 0 0.35rem 1.4rem;
+            position: relative;
+        }
+
+        .card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0.2rem;
+            color: #6b8da8;
+            font-weight: 500;
+        }
+
+        /* 特殊区块 */
+        .intro-wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .link-sentence {
+            background: #f8fafc;
+            border: 1px solid #dce2e9;
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            margin-top: 0.25rem;
+            font-size: 0.98rem;
+            color: #1d2e3f;
+        }
+
+        .link-sentence a {
+            color: #2b6e93;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #9bb8d0;
+        }
+
+        .link-sentence a:hover {
+            border-bottom: 1px solid #2b6e93;
+            color: #15465e;
+        }
+
+        .notice-box {
+            background: #f5f9fd;
+            border: 1px solid #cbdae7;
+            border-radius: 12px;
+            padding: 1.2rem 1.6rem;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .notice-box span {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .notice-box p {
+            font-size: 0.95rem;
+            color: #1f374b;
+            margin: 0;
+        }
+
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #1b3e57;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: #2b4055;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #dde3ea;
+            margin: 1.5rem 0;
+        }
+
+        .footer-note {
+            margin-top: 2.2rem;
+            text-align: center;
+            color: #5a6e7e;
+            font-size: 0.85rem;
+            border-top: 1px solid #dce2e9;
+            padding-top: 1.5rem;
+        }
+
+        /* 响应式 */
+        @media (min-width: 700px) {
+            .intro-wrap {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .card {
+                padding: 2rem 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1.5rem 0.9rem;
+            }
+            .card {
+                padding: 1.25rem 1.1rem;
+            }
+            .site-header h1 {
+                font-size: 1.6rem;
+            }
+            .link-sentence {
+                padding: 1rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 标题 -->
+        <div class="site-header">
+            <h1>雷竞技 · 信息索引</h1>
+            <div class="sub">站点背景 · 功能说明 · 常见参考</div>
+        </div>
+
+        <!-- 主卡片区：目录感布局 -->
+        <div class="card-grid">
+            <!-- 分区一：站点介绍 + 可信说明 -->
+            <div class="intro-wrap">
+                <div class="card">
+                    <h2>关于平台</h2>
+                    <p>雷竞技是一个面向竞技与娱乐体验的线上站点，提供赛事资讯、数据参考及互动内容。平台围绕电子竞技与体育竞技构建信息聚合，帮助用户快速了解相关动态。</p>
+                    <p style="margin-top: 0.6rem;">该站持续更新内容，覆盖多类竞技项目，适合爱好者与轻度用户浏览参考。所有展示信息均来自公开渠道与平台整理，用户可自行判断与使用。</p>
+                </div>
+
+                <div class="card">
+                    <h2>可信说明</h2>
+                    <p>本介绍页仅作为知识型入口参考，不构成任何形式的投资、博彩或商业引导。平台内容以信息展示为核心，用户在使用前应仔细阅读站内条款。</p>
+                    <p style="margin-top: 0.5rem;">以下为核实参考：</p>
+                    <ul>
+                        <li>站点采用常规内容组织方式，无隐藏引导</li>
+                        <li>所有链接与说明均保持公开透明</li>
+                        <li>建议用户根据自身情况合理使用网络服务</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 分区二：特点与适用场景 -->
+            <div class="card">
+                <h2>特点与适用场景</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: space-between;">
+                    <div style="flex: 1 1 200px;">
+                        <p><strong>内容聚合</strong> · 赛事、战队、数据等信息集中展示，减少查找成本。</p>
+                        <p style="margin-top: 0.7rem;"><strong>轻量浏览</strong> · 页面结构清晰，适合快速获取竞技相关资讯。</p>
+                    </div>
+                    <div style="flex: 1 1 200px;">
+                        <p><strong>日常关注</strong> · 适合在闲暇时浏览近期赛事动态与社区讨论。</p>
+                        <p style="margin-top: 0.7rem;"><strong>资料查询</strong> · 可作为了解特定项目或队伍的基础信息入口。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分区三：提示区 + 相关信息区 组合 -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div class="notice-box">
+                    <span>📌</span>
+                    <p><strong>提示：</strong> 本站内容仅供信息参考，不构成任何形式的推荐或承诺。请根据个人判断合理使用网络资源，注意信息安全与隐私保护。</p>
+                </div>
+
+                <div class="card">
+                    <h2>相关信息</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <p style="font-weight: 500; margin-bottom: 0.25rem;">常见项目</p>
+                            <ul>
+                                <li>电子竞技赛事</li>
+                                <li>体育竞技数据</li>
+                                <li>战队与选手介绍</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p style="font-weight: 500; margin-bottom: 0.25rem;">参考资源</p>
+                            <ul>
+                                <li>官方规则文档</li>
+                                <li>社区讨论区</li>
+                                <li>更新日志</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分区四：FAQ 摘要（简洁） -->
+            <div class="card">
+                <h2>常见疑问摘要</h2>
+                <div class="faq-item">
+                    <strong>Q：雷竞技提供哪些内容？</strong>
+                    <p>主要涵盖竞技资讯、赛事数据、项目介绍以及相关背景说明，范围较广但以信息整合为主。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Q：是否需要注册才能浏览？</strong>
+                    <p>大部分内容可直接访问，部分互动功能可能需要注册，具体以站内指引为准。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Q：信息更新频率如何？</strong>
+                    <p>站内会随赛事及项目进度进行内容更新，保持时效性，但建议用户自行核实关键信息。</p>
+                </div>
+            </div>
+
+            <!-- 链接嵌入句子（严格符合要求） -->
+            <div class="link-sentence">
+                <p>如果你希望进一步了解平台的整体服务与内容，可以直接访问 <a href="https://portal-raygame.com">雷竞技</a>，那里提供了更完整的导航和详细信息。本页作为知识参考，帮助你快速建立对站点的基本认知。</p>
+            </div>
+
+            <!-- 附加说明：温和收尾 -->
+            <div style="margin-top: 0.5rem; font-size: 0.93rem; color: #3f5669; padding: 0.5rem 0;">
+                <p>以上内容基于公开信息整理，旨在为用户提供一个温和、清晰的了解窗口。网站结构与功能可能随时间调整，请以实际页面为准。</p>
+            </div>
+        </div>
+
+        <div class="footer-note">
+            © 介绍参考页 · 内容仅供了解 · 请合理使用
+        </div>
+    </div>
+</body>
+</html>
